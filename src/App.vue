@@ -1,11 +1,9 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import TheWelcome from "./components/TheWelcome.vue";
-import type { Foo } from "./types";
-import type { Bar } from "./types";
 
-const dummy_foo = {};
-const dummy_bar = {} as Bar;
+const dummy = ref("");
 </script>
 
 <template>
@@ -20,9 +18,17 @@ const dummy_bar = {} as Bar;
 
     <div class="wrapper">
       <HelloWorld
+        v-if="
+          dummy === 'A Long long long string A' ||
+          dummy === 'A Long long long string B' ||
+          dummy === 'A Long long long string C'
+        "
+        :foo="
+          dummy === 'A Long long long string A' ||
+          dummy === 'A Long long long string B' ||
+          dummy === 'A Long long long string C'
+        "
         msg="You did it!"
-        :foo="(dummy_foo as Foo)"
-        :bar="dummy_bar"
       />
     </div>
   </header>

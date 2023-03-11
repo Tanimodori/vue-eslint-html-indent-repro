@@ -17,8 +17,6 @@
     }
   },
   "rules": {
-    "@typescript-eslint/consistent-type-imports": "error",
-
     /** These rules are disabled because they are incompatible with prettier */
     "vue/html-self-closing": "off",
     "vue/singleline-html-element-content-newline": "off",
